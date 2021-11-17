@@ -1,21 +1,21 @@
 [package]
-name = "bpf-program-template"
+name = "SolNFT"
 version = "0.1.0"
 edition = "2018"
 license = "WTFPL"
 publish = false
 
 [dependencies]
-solana-program = "=1.8.1"
-
-[features]
-test-bpf = []
+solana-program = "1.8.2"
+arrayref = "0.3.6"
+itertools = "0.10.1"
+thiserror = "1.0.24"
+spl-token = { version = "3.2", features = [ "no-entrypoint" ] }
 
 [dev-dependencies]
-assert_matches = "1.4.0"
-solana-program-test = "=1.8.1"
-solana-sdk = "=1.8.1"
-solana-validator = "=1.8.1"
+solana-program-test = "1.8.2"
+solana-sdk = "1.8.2"
+
 
 [lib]
 crate-type = ["cdylib", "lib"]
