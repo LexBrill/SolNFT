@@ -13,8 +13,8 @@ use arrayref::{array_mut_ref, array_ref, array_refs, mut_array_refs};
 
 #[derive(Clone)]
 pub struct InitMergerArgs {
-    pub nft_mint_a: Pubkey,
-    pub nft_mint_b: Pubkey,
+    // pub nft_mint_a: Pubkey,
+    // pub nft_mint_b: Pubkey,
 }
 pub enum NFTInstruction {
     /// 0. `[signer]` User initializing the merger
@@ -73,12 +73,12 @@ impl Pack for InitMergerArgs {
         ) = mut_array_refs![dst, 32, 32];
 
         let InitMergerArgs {
-            nft_mint_a,
-            nft_mint_b,
+            // nft_mint_a,
+            // nft_mint_b,
         } = self;
 
-        nft_mint_a_dst.copy_from_slice(nft_mint_a.as_ref());
-        nft_mint_b_dst.copy_from_slice(nft_mint_b.as_ref());
+        // nft_mint_a_dst.copy_from_slice(nft_mint_a.as_ref());
+        // nft_mint_b_dst.copy_from_slice(nft_mint_b.as_ref());
     }
 
     fn unpack_from_slice(src: &[u8]) -> Result<Self, ProgramError> {
@@ -89,8 +89,8 @@ impl Pack for InitMergerArgs {
         ) = array_refs![src, 32, 32];
 
         Ok(InitMergerArgs {
-            nft_mint_a: Pubkey::new_from_array(*nft_mint_a),
-            nft_mint_b: Pubkey::new_from_array(*nft_mint_b),
+            // nft_mint_a: Pubkey::new_from_array(*nft_mint_a),
+            // nft_mint_b: Pubkey::new_from_array(*nft_mint_b),
         })
 
     }

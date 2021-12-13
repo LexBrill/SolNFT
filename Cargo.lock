@@ -13,6 +13,7 @@ name = "SolNFT"
 version = "0.1.0"
 dependencies = [
  "arrayref",
+ "borsh",
  "itertools 0.10.1",
  "solana-program",
  "solana-program-test",
